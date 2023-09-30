@@ -1,0 +1,39 @@
+﻿@model IEnumerable<converthtmltopdfusingjs.Models.Customer>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table class="table table-bordered">
+    <th>@Html.DisplayNameFor(a => a.CompanyName)</th>
+    <th>
+        @Html.DisplayNameFor(model => model.ContactName)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.ContactTitle)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Address)
+    </th>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanyName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.ActionLink("Orders", "Order", new { id = item.CustomerID })
+    </td>
+</tr>
+       
+    }
+
+</table>
